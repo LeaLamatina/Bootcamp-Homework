@@ -43,3 +43,17 @@ print(Candidates[3], ">> ", Can4, ":", "{0:.0%}".format(Can4/Voters))
 print("--------------------------")
 print("Winner: Khan") # dictionary return key value?
 print("--------------------------")
+
+with open("PyPoll_txt", "w") as Katrina:
+    print("Election Results", file=Katrina)
+    print("--------------------------", file=Katrina)
+    print("Total Votes Cast: ", Voters, file=Katrina)
+    print("--------------------------", file=Katrina)
+    print("- Candidate Totals -", file=Katrina)
+    print(Candidates[0], ">> ", Can1, ":", "{0:.0%}".format(Can1/Voters), file=Katrina)
+    print(Candidates[1], ">> ", Can2, ":", "{0:.0%}".format(Can2/Voters), file=Katrina)
+    print(Candidates[2], ">> ", Can3, ":", "{0:.0%}".format(Can3/Voters), file=Katrina)
+    print(Candidates[3], ">> ", Can4, ":", "{0:.0%}".format(Can4/Voters), file=Katrina)
+    print("--------------------------", file=Katrina)
+    print("Winner: Khan", file=Katrina) # dictionary return key value?
+    print("--------------------------", file=Katrina)
