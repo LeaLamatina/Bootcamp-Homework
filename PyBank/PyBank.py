@@ -8,44 +8,36 @@ with open(BudgetDataRaw, "r") as Alex:
     budData = csv.reader(Alex)
     next(budData)
 
-#Variables for total Months and Profit/Loss
+#So many variables, there was probably a cleaner way to do this
     Months = 0
     PLTot = 0
-
-#for loop through to capture the totals of each
-    for line in budData:
-        Months = Months + 1
-        PLTot = PLTot + int(line[1])
-
-with open(BudgetDataRaw, "r") as Alex:
-    budData = csv.reader(Alex)
-    next(budData)
-
-#create variables to store all the necessary information
     totalDiff = 0
     previousMonth = 0
     firstLoop = True
     currentDiff = 0
     maxDiff = 0
-    minDiff = 0    
-    
+    maxDate = 0
+    minDiff = 0
+    minDate = 0
+
+#for loop through to capture the totals of each
     for line in budData:
+        Months = Months + 1
+        PLTot = PLTot + int(line[1])
         if firstLoop == False:
             currentDiff = previousMonth - int(line[1])
             totalDiff = totalDiff + currentDiff
         previousMonth = int(line[1])
-        if  - int(line[1]) > :
-            maxDiff = [line[1], " - ", previousMonth - int(line[1])]
-        if previousMonth - int(line[1]) < 0:
-            minDiff = line[1], " - ", previousMonth - int(line[1])
+        if currentDiff > maxDiff:
+            maxDiff = currentDiff
+            maxDate = line[0]
+        if currentDiff < minDiff:
+            minDiff = currentDiff
+            minDate = line[0]
         firstLoop = False
-    
-    #total months - 1 because you need two months to average    
-    averageDiff = totalDiff / (Months - 1)
-    print(totalDiff)
-    print(averageDiff)
-    print(maxDiff)
-    print(minDiff)
+
+#total months - 1 because you need two months to average    
+averageDiff = totalDiff / (Months - 1)
 
 print("Budget Snapshot")
 print("--------------------------")
@@ -53,6 +45,6 @@ print("Total Number of Months: ", Months)
 print("Net Profit/Loss over", Months, "Months: ", PLTot)
 print("--------------------------")
 print("Average Change: ", averageDiff)
-print("Greatest Increase: ")
-print("Greatest Decrease: ")
+print("Greatest Increase: ", maxDate, " > ", maxDiff)
+print("Greatest Decrease: ", minDate, " > ", minDiff)
 print("--------------------------")

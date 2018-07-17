@@ -1,3 +1,7 @@
-Python_Challenge
+Python_Challenge **Lea Lamatina**
 
-This is my repository for the Python Week homework.  Adding something to my ReadMe so I can see if it will push correctly.
+Repository for Python Week Homework.
+
+Resources folder contains the csv's referenced in the code.
+
+Both PyPoll and PyBank have .py and .ipynb versions of the Homework.
