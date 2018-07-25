@@ -1,0 +1,4 @@
+Py City Schools Analysis:
+Based on this data, Charter Schools fared better than District Schools.  The difference is pretty substantial, 95% overall passing rate to 76%.  
+The passing rate is also substantially different for the size of schools.  I would be curious to know the student to teacher ratio for the three sizes as well.
+Spending per student is interesting, there isn't a correlation between what schools spent and how they preformed on reading scores.  Without knowing what that entails (teachers salaries, extra-curriculars, technology, etc.) it's hard to know if there is a correlation between money spend on math and english programs and test scores.
