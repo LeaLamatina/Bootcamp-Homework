@@ -42,11 +42,6 @@ complete_data["Pass/Fail Reading"] = pd.cut(complete_data["Reading Score"], pass
 # this column is because I can't get my dataframes to put numbers that don't change inside of it
 complete_data["Cheat"] = int(1)
 
-# do the column mapping here to make my numbers show cleaner
-complete_data["Budget"] = complete_data["Budget"].map("${:,}".format)
-complete_data["Size"] = complete_data["Size"].map("{:,}".format)
-complete_data["Spending Per Student"] = complete_data["Spending Per Student"].map("${:.2f}".format)
-
 #total number of schools, students, budget
 total_schools = len(school_data_raw["school_name"])
 total_students = sum(school_data_raw["size"])
