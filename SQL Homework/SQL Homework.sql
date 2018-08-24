@@ -71,12 +71,12 @@ JOIN address
 ON staff.address_id=address.address_id;
 
 # 6B - Use JOIN to display the total amount rung up by each staff member in August of 2005
-SELECT first_name, last_name, sum(amount)
+SELECT first_name, last_name, concat('$', format(sum(amount), 2)) AS 'Total Sold'
 FROM staff
-JOIN payment
-ON staff.staff_id=payment.staff_id
-WHERE payment_date 
-BETWEEN '2005-08-01 00:00:00' and '2005-08-31 23:59:59';
+JOIN payment ON staff.staff_id=payment.staff_id
+WHERE DATE(payment_date)
+BETWEEN '2005-08-01' and '2005-08-31'
+GROUP BY first_name;
 
 # 6C - List each film and the number of actors who are listed for that film
 SELECT title, count(actor_id) AS 'Number of Actors'
@@ -102,14 +102,12 @@ group by p.customer_id
 ORDER BY last_name;
 
 # 7A - Use subqueries to display the titles of movies starting with the letters K and Q whose language is English.
-SELECT title
-FROM film
-WHERE title
-LIKE 'K%' or 'Q%' IN(
-	SELECT language_id
-    FROM language
-    WHERE name='English'        
-);
+SELECT f.title, l.name
+FROM film f
+LEFT JOIN language l ON f.language_id=l.language_id
+WHERE l.name='English'
+AND f.title LIKE 'K%' 
+OR f.title LIKE 'Q%';
 
 # 7B - All actors in Alone Trip
 SELECT first_name, last_name
@@ -158,7 +156,7 @@ WHERE staff_id=1
 UNION
 SELECT 'Store 2', concat('$', format(sum(amount), 2)) AS 'Total Purchases'
 FROM payment
-WHERE staff_id=2;
+WHERE staff_id=2; 
 
 # 7G - Write a query to display for each store its store ID, city, and country.
 SELECT store.store_id, city.city, country.country
