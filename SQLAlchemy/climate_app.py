@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 # Database Setup
-engine = create_engine("sqlite:///C:/Users/leala/Documents/Data Git Repo/python-challenge/Boot Camp Homework/SQLAlchemy/Resources/hawaii.sqlite")
+engine = create_engine("sqlite:///C:/Users/leala/Documents/Data Git Repo/python-challenge/Boot Camp Homework/SQLAlchemy/Resources/hawaii.sqlite", connect_args={'check_same_thread': False}, echo=True)
 session = Session(engine)
 Base = automap_base()
 Base.prepare(engine, reflect=True)
@@ -31,8 +31,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/start<br/>"
-        f"/api/v1.0/start/end<br/>"
+        f"/api/v1.0/start date<br/>"
+        f"/api/v1.0/start date/end date<br/>"
     )
 
 # precip API call
