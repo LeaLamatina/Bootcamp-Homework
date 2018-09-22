@@ -12,43 +12,33 @@
 <body>
   <div class="jumbotron text-center">
     <h1>Mission to Mars Scrape</h1>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Scrape New Data</a></p>
+    <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <h3>Latest Mars News</h3>
-        <!-- Information gathered from Nasa Mars News here -->
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti doloremque tempora ratione corporis sequi, cum velit quisquam inventore, minus harum laboriosam enim soluta eos, laborum aperiam. Id soluta consequuntur exercitationem.</p>
+        <h5>{{mars_dictionary.nasa_title}}</h5>
+        <p>{{mars_dictionary.nasa_para}}</p>
+        <hr style="color:lightgrey">
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <div class="col-md-9">
-          <h3>Featured Mars Image</h3>
-          <!-- Information from JPL image search here -->
-          <img src="https://media.istockphoto.com/photos/honey-badger-sniffing-the-air-picture-id498886489" width="750">
+        <div class="row">
+          <div class="col-md-9">
+            <h3>Featured Mars Image</h3>
+            <img src="{{mars_dictionary.full_jpl}}" width="750">
+          </div>
+          <div class="col-md-3" style="border-width:4px; border-color:darkgray">
+            <h5>Current Weather on Mars</h5>
+            <h5>{{mars_dictionary.tweet}}</h5>
+            <h5>Mars Facts</h5>
+            <p>{{mars_dictionary.facts_html}}</p>
+          </div>
         </div>
-        <div class="col-md-3" style="border-width:4px; border-color:darkgray">
-          <h5>Current Weather on Mars</h5>
-          <!-- Information from Twitter Data here -->
-          <img src="https://media.istockphoto.com/photos/honey-badger-picture-id1027883216" width="250">
-        </div>
-        <div class="col-md-3">
-          <h5>Mars Facts</h5>
-          <!-- TODO add box here for table information -->
-          <img src="https://media.istockphoto.com/photos/honey-badger-picture-id1027883216" width="250">
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-end">
-      <div class="col-md-3">
-        <h5>Mars Facts</h5>
-        <!-- TODO add box here for table information -->
-        <img src="https://media.istockphoto.com/photos/honey-badger-picture-id1027883216" width="250">
       </div>
     </div>
 
