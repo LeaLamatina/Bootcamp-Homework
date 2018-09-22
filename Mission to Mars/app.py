@@ -11,6 +11,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
 	pass
+	#mongo query to reference scrape input
 	return render_template("index.html", )
 
 @app.route("/scrape")
