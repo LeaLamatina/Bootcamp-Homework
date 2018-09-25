@@ -19,8 +19,8 @@
     <div class="row">
       <div class="col-md-12">
         <h3>Latest Mars News</h3>
-        <h5>{{mars_dictionary.nasa_title}}</h5>
-        <p>{{mars_dictionary.nasa_para}}</p>
+        <h5>{{mars_data.nasa_title}}</h5>
+        <p>{{mars_data.nasa_para}}</p>
         <hr style="color:lightgrey">
       </div>
     </div>
@@ -34,9 +34,9 @@
           </div>
           <div class="col-md-3" style="border-width:4px; border-color:darkgray">
             <h5>Current Weather on Mars</h5>
-            <h5>{{mars_dictionary.tweet}}</h5>
+            <h5>{{mars_data.tweet}}</h5>
             <h5>Mars Facts</h5>
-            <p>{{mars_dictionary.facts_html}}</p>
+            <p>{{mars_data.facts_html}}</p>
           </div>
         </div>
       </div>
@@ -51,18 +51,22 @@
 
     <div class="row justify-content-md-center">
       <div class="col-md-5" style="padding:8px">
-        <img src="https://media.istockphoto.com/photos/honey-badger-picture-id530708005" width="400">
+        <img src={{mars_data.hemisphere_img.[0].img_url}} width="400">
+        <figcaption>{{mars_data.hemisphere_img.[0].title}}</figcaption>
       </div>
       <div class="col-md-5" style="padding:8px">
-        <img src="https://media.istockphoto.com/photos/honey-badger-picture-id530708005" width="400">
+        <img src={{mars_data.hemisphere_img.[1].img_url}} width="400">
+        <figcaption>{{mars_data.hemisphere_img.[1].title}}</figcaption>
       </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-5" style="padding:8px">
-        <img src="https://media.istockphoto.com/photos/honey-badger-picture-id530708005" width="400">
+        <img src={{mars_data.hemisphere_img.[2].img_url}} width="400">
+        <figcaption>{{mars_data.hemisphere_img.[2].title}}</figcaption>
       </div>
       <div class="col-md-5" style="padding:8px">
-        <img src="https://media.istockphoto.com/photos/honey-badger-picture-id530708005" width="400">
+        <img src={{mars_data.hemisphere_img.[3].img_url}} width="400">
+        <figcaption>{{mars_data.hemisphere_img.[3].title}}</figcaption>
       </div>
     </div>
 
